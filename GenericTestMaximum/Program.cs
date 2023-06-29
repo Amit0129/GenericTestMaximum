@@ -21,8 +21,8 @@
                         int digit = Convert.ToInt32(Console.ReadLine());
                         noArr[i] = digit;
                     }
-                    int maxInt = new TestMaximum<int>(noArr).GetMaxValue();
-                    Console.WriteLine($"The maxumum number between three integer is : {maxInt}");
+                    TestMaximum<int> testMaxInt = new TestMaximum<int>(noArr);
+                    testMaxInt.ToPrint();
                     break;
                 case 2:
                     Console.WriteLine("How many float number you want to compare");
@@ -34,8 +34,8 @@
                         float fodigit = float.Parse(Console.ReadLine());
                         foArr[i] = fodigit;
                     }
-                    float maxFloat = new TestMaximum<float>(foArr).GetMaxValue();
-                    Console.WriteLine($"The maxumum number between three integer is : {maxFloat}");
+                    TestMaximum<float> testMaxFloat = new TestMaximum<float>(foArr);
+                    testMaxFloat.ToPrint();
                     break;
                 case 3:
                     Console.WriteLine("How many string you want to compare");
@@ -47,8 +47,8 @@
                         string letter = Console.ReadLine();
                         stArr[i] = letter;
                     }
-                    string maxString = new TestMaximum<string>(stArr).GetMaxValue();
-                    Console.WriteLine($"The maxumum number between three integer is : {maxString}");
+                    TestMaximum<string> testMaxString = new TestMaximum<string>(stArr);
+                    testMaxString.ToPrint();
                     break;
                 default:
                     Console.WriteLine("Please Enter a valid choice");

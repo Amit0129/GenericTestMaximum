@@ -21,13 +21,18 @@ namespace GenericTestMaximum
         public T FindMaximum(T[] parameters)
         {
             var maxValue = Sort(parameters);
-            return maxValue[maxValue.Length-1];
+            return maxValue[maxValue.Length - 1];
         }
         public T GetMaxValue()
         {
             var maximumValue = FindMaximum(parameters);
             return maximumValue;
         }
+        public void ToPrint()
+        {
+            var maximum = FindMaximum(this.parameters);
+            Console.WriteLine($"The Maximum value is {maximum}");
 
+        }
     }
 }
