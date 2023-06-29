@@ -8,38 +8,25 @@ namespace GenericTestMaximum
 {
     public class TestMaximum<T> where T : IComparable
     {
-        private T valueOne;
-        private T valueTwo;
-        private T valueThree;
-        public TestMaximum(T valueOne,T valueTwo,T valueThree)
+        public T[] parameters;
+        public TestMaximum(T[] parameters)
         {
-            this.valueOne = valueOne;
-            this.valueTwo = valueTwo;
-            this.valueThree = valueThree;
+            this.parameters = parameters;
         }
-        public T GetMaximun() 
+        public T[] Sort(T[] parameters)
         {
-            
-            if (valueOne.CompareTo(valueTwo) > 0 && valueOne.CompareTo(valueThree) > 0 ||
-               valueOne.CompareTo(valueTwo) >= 0 && valueOne.CompareTo(valueThree) > 0 ||
-               valueOne.CompareTo(valueTwo) > 0 && valueOne.CompareTo(valueThree) >= 0)
-            {
-                return valueOne;
-            }
-            if (valueTwo.CompareTo(valueOne) > 0 && valueTwo.CompareTo(valueThree) > 0 ||
-                valueTwo.CompareTo(valueOne) >= 0 && valueTwo.CompareTo(valueThree) > 0 ||
-                valueTwo.CompareTo(valueOne) > 0 && valueTwo.CompareTo(valueThree) >= 0)
-            {
-                return valueTwo;
-            }
-            if (valueThree.CompareTo(valueTwo) > 0 && valueThree.CompareTo(valueOne) > 0 ||
-                valueThree.CompareTo(valueTwo) >= 0 && valueThree.CompareTo(valueOne) > 0 ||
-                valueThree.CompareTo(valueTwo) > 0 && valueThree.CompareTo(valueOne) >= 0)
-            {
-                return valueThree;
-            }
-            return valueOne;
-
+            Array.Sort(parameters);
+            return parameters;
+        }
+        public T FindMaximum(T[] parameters)
+        {
+            var maxValue = Sort(parameters);
+            return maxValue[maxValue.Length-1];
+        }
+        public T GetMaxValue()
+        {
+            var maximumValue = FindMaximum(parameters);
+            return maximumValue;
         }
 
     }
