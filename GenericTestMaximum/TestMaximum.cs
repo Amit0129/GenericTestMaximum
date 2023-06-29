@@ -37,5 +37,33 @@ namespace GenericTestMaximum
             return numOne;
 
         }
+        public float GetMaximumFloat()
+        {
+            Console.WriteLine("Eneter First floatber");
+            float floatOne = float.Parse(Console.ReadLine());
+            Console.WriteLine("Eneter Second floatber");
+            float floatTwo = float.Parse(Console.ReadLine());
+            Console.WriteLine("Eneter Third floatber");
+            float floatThree = float.Parse(Console.ReadLine());
+            if (floatOne.CompareTo(floatTwo) > 0 && floatOne.CompareTo(floatThree) > 0 ||
+               floatOne.CompareTo(floatTwo) >= 0 && floatOne.CompareTo(floatThree) > 0 ||
+               floatOne.CompareTo(floatTwo) > 0 && floatOne.CompareTo(floatThree) >= 0)
+            {
+                return floatOne;
+            }
+            if (floatTwo.CompareTo(floatOne) > 0 && floatTwo.CompareTo(floatThree) > 0 ||
+                floatTwo.CompareTo(floatOne) >= 0 && floatTwo.CompareTo(floatThree) > 0 ||
+                floatTwo.CompareTo(floatOne) > 0 && floatTwo.CompareTo(floatThree) >= 0)
+            {
+                return floatTwo;
+            }
+            if (floatThree.CompareTo(floatTwo) > 0 && floatThree.CompareTo(floatOne) > 0 ||
+                floatThree.CompareTo(floatTwo) >= 0 && floatThree.CompareTo(floatOne) > 0 ||
+                floatThree.CompareTo(floatTwo) > 0 && floatThree.CompareTo(floatOne) >= 0)
+            {
+                return floatThree;
+            }
+            return floatOne;
+        }
     }
 }
