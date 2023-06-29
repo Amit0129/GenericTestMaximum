@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace GenericTestMaximum
 {
-    public class TestMaximum
+    public class TestMaximum<T> where T : IComparable
     {
-        public T GetMaximun<T>(T valueOne, T valueTwo, T valueThree) where T : IComparable
+        private T valueOne;
+        private T valueTwo;
+        private T valueThree;
+        public TestMaximum(T valueOne,T valueTwo,T valueThree)
+        {
+            this.valueOne = valueOne;
+            this.valueTwo = valueTwo;
+            this.valueThree = valueThree;
+        }
+        public T GetMaximun() 
         {
             
             if (valueOne.CompareTo(valueTwo) > 0 && valueOne.CompareTo(valueThree) > 0 ||

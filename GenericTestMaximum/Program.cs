@@ -9,7 +9,6 @@
             Console.WriteLine("Enter 3 for Checking Max String");
             
             int choice = Convert.ToInt32(Console.ReadLine());
-            TestMaximum testMaximum = new TestMaximum();
             switch (choice)
             {
                 case 1:
@@ -19,7 +18,7 @@
                     int numTwo = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Enter Third Number");
                     int numThree = Convert.ToInt32(Console.ReadLine());
-                    int maxNumber = testMaximum.GetMaximun<int>(numOne, numTwo, numThree);
+                    int maxNumber =new TestMaximum<int>(numOne, numTwo, numThree).GetMaximun();
                     Console.WriteLine($"The maxumum number between three integer is : {maxNumber}");
                     break;
                 case 2:
@@ -29,7 +28,7 @@
                     float floatTwo = float.Parse(Console.ReadLine());
                     Console.WriteLine("Enter Third floatnumber");
                     float floatThree = float.Parse(Console.ReadLine());
-                    float maxFloat = testMaximum.GetMaximun<float>(floatOne, floatTwo, floatThree);
+                    float maxFloat = new TestMaximum<float>(floatOne, floatTwo, floatThree).GetMaximun();
                     Console.WriteLine($"The maxumum number between three float number is : {maxFloat}");
                     break;
                 case 3:
@@ -39,7 +38,7 @@
                     string stringTwo = Console.ReadLine();
                     Console.WriteLine("Enter Third string");
                     string stringThree = Console.ReadLine();
-                    string maxString = testMaximum.GetMaximun<string>(stringOne, stringTwo, stringThree);
+                    string maxString = new TestMaximum<string>(stringOne,stringTwo,stringThree).GetMaximun();
                     Console.WriteLine($"The maxumum between three string is : {maxString}");
                     break;
                 default:
